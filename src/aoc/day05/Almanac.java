@@ -48,6 +48,11 @@ public class Almanac {
 	}
 	
 	public void printSolution() {
+		Long total = 0L;
+		for(int i = 1; i < seeds.size(); i+=2) {
+			total += seeds.get(i);
+		}
+		System.out.println(total);
 		System.out.println("Part 1: " + getMinLocation());
 		System.out.println("Part 2: " + getMinSeedRangeLocation());
 	}
