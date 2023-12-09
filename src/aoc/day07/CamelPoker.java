@@ -23,8 +23,6 @@ public class CamelPoker {
 		sc.close();
 		hands.sort(Hand::compareTo);
 		handJoker.sort(Hand::compareTo);
-		System.out.println("Part 1: " + totalWinnings(hands));
-		System.out.println("Part 2: " + totalWinnings(handJoker));
 	}
 	
 	public int totalWinnings(List<Hand> h) {
@@ -35,5 +33,10 @@ public class CamelPoker {
 			i++;
 		}
 		return result;
+	}
+	
+	public void printSolution() {
+		System.out.println("Part 1: " + totalWinnings(hands));
+		System.out.println("Part 2: " + totalWinnings(handJoker));
 	}
 }

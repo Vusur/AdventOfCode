@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Network {
@@ -24,16 +23,7 @@ public class Network {
 				nodes.add(new Node(in[0], in[1], in[2]));
 			}
 		}
-		sc.close();
-		Node startNode = nodes.stream().filter(n -> n.name().equals("AAA")).findFirst().orElse(null);
-		System.out.println("Part 1: " + travelSteps(startNode, "ZZZ"));
-		
-		//The cycles between each .*Z -> .*Z have the same length. 
-		//.*A -> .*Z is the same as .*Z -> .*Z in length, so we just need the first cycle
-		//find the lcm of all steps
-		List<Long> allTravelSteps = nodes.stream().filter(n -> n.name().matches(".*A$")).map(n -> travelSteps(n, ".*Z$")).collect(Collectors.toList());
-		System.out.println("Part 2: " + lcm(allTravelSteps, 0));
-		
+		sc.close();		
 	}
 	
 	private long travelSteps(Node startNode, String endRule) {
@@ -58,5 +48,16 @@ public class Network {
 		var b = lcm(args, i+1);
 		return (a*b / gcd(a, b));
 		
+	}
+	
+	public void printSolution() {
+		Node startNode = nodes.stream().filter(n -> n.name().equals("AAA")).findFirst().orElse(null);
+		System.out.println("Part 1: " + travelSteps(startNode, "ZZZ"));
+		
+		//The cycles between each .*Z -> .*Z have the same length. 
+		//.*A -> .*Z is the same as .*Z -> .*Z in length, so we just need the first cycle
+		//find the lcm of all steps
+		List<Long> allTravelSteps = nodes.stream().filter(n -> n.name().matches(".*A$")).map(n -> travelSteps(n, ".*Z$")).collect(Collectors.toList());
+		System.out.println("Part 2: " + lcm(allTravelSteps, 0));
 	}
 }

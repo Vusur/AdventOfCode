@@ -8,7 +8,7 @@ public class Main {
 		String fpath = "./src/inputs/day7.txt";
 		try {
 			CamelPoker cp = new CamelPoker(fpath);
-			
+			cp.printSolution();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

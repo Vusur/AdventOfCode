@@ -9,6 +9,7 @@ public class Main {
 		
 		try {
 			Network net = new Network(fpath);
+			net.printSolution();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

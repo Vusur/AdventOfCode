@@ -17,7 +17,9 @@ public class Oasis {
 		var input = new File(fpath);
 		var sc = new Scanner(input);	
 		while(sc.hasNextLine()) {
-			var sequence = Stream.of(sc.nextLine().split(" ")).map(n -> Long.parseLong(n)).collect(Collectors.toList());
+			var sequence = Stream.of(sc.nextLine().split(" "))
+					.map(n -> Long.parseLong(n))
+					.collect(Collectors.toList());
 			sumPart1 += predictNumber(sequence);
 			sumPart2 += predictNumber(sequence.reversed());
 		}		
@@ -30,7 +32,7 @@ public class Oasis {
 		}
 		List<Long> nextNumber = new ArrayList<Long>();
 		for(var i = 0; i < sequence.size()-1; i++) {
-			var next = sequence.get(i+1)-sequence.get(i);
+			var next = sequence.get(i+1) - sequence.get(i);
 			nextNumber.add(next);
 		}
 		return sequence.get(sequence.size()-1) + predictNumber(nextNumber);
