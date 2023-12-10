@@ -1,4 +1,4 @@
-package solutions.day01;
+package aoc.day01;
 
 import java.io.FileNotFoundException;
 
