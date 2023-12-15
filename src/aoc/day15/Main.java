@@ -20,6 +20,7 @@ public class Main {
 		var line = sc.nextLine().split(",");
 		var r = 0;
 		
+		//create empty box list with all boxes
 		for(int i = 0; i < 256; i++) {
 			boxes.add(new LinkedHashMap<String, Integer>());
 		}
@@ -30,17 +31,13 @@ public class Main {
 		}
 		System.out.println(r);
 		System.out.println(calcPower());
-		sc.close();
-		
-				
+		sc.close();				
 	}
 	
 	public static int toHash(String string) {
 		var value = 0;
 		for(int i = 0; i < string.length(); i++) {
-			value = value + string.charAt(i);
-			value = value * 17;
-			value = value % 256;
+			value = ((value + string.charAt(i)) * 17) % 256;
 		}
 		return value;
 	}
