@@ -50,7 +50,6 @@ public class Main {
 		var input = string.split("[=-]");
 		var hash = toHash(input[0]);
 		var map = boxes.get(hash);
-		//add op
 		if(adding) {			
 			map.put(input[0], Integer.parseInt(input[1]));
 		}
