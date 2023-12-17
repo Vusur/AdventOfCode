@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-import aoc.Solver;
+import aoc.utils.Solver;
 
 public class GalaxyMap extends Solver {
 
