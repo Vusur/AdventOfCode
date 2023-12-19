@@ -37,6 +37,14 @@ public enum Direction {
 		return this.dir;
 	}
 	
+	public int getX() {
+		return this.dir.x;
+	}
+	
+	public int getY() {
+		return this.dir.y;
+	}
+	
 	public static boolean isReverse(Direction firstDir, Direction secondDir) {
 		
 		if(firstDir.getDir().x * -1 == secondDir.getDir().x &&
